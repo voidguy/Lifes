@@ -1,0 +1,9 @@
+
+
+class Chunk {
+
+public:
+	Chunk();
+		
+
+};
