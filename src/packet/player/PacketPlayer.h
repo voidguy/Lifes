@@ -1,10 +1,11 @@
 
 
-class PlayerMovePacket: public Packet {
+class PacketPlayer: public Packet {
 public:
-	PlayerMovePacket();
-	virtual ~PlayerMovePacket();
-	
+	PlayerPacket();
+	PlayerPacket(uuid_t)
+	virtual ~PlayerPacket();
+
 public:
 	virtual void decrypt(PacketSerializer packet_serializer) override;
 	virtual void encrypt(PacketSerializer packet_serializer) override; 
@@ -12,8 +13,4 @@ public:
 
 private:
 	Player who;
-	Location to;
-	Location from;
-
-	DECLARE_REFLECT(PlayerMovePacket, 0x1001);
 };
